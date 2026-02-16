@@ -159,3 +159,16 @@ void printListR(LLPtr currentPtr) {
         printf("NULL\n");
     }
 }
+
+// Clear all nodes
+void clearList(LLPtr *sPtr) {
+    LLPtr tempPtr;
+    // Matches the logs from autograder/image
+    puts("Clear all nodes"); 
+    while (*sPtr != NULL) {
+        tempPtr = *sPtr;
+        printf("delete %d\n", tempPtr->id);
+        *sPtr = (*sPtr)->nextPtr;
+        free(tempPtr);
+    }
+}
