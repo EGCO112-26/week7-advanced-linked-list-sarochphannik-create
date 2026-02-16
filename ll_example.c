@@ -47,14 +47,6 @@ int main( void )
             } // end else
 
             break;
-         case 3: // print the list in both orders
-            printList( startPtr );
-            printListR( startPtr );
-            break;
-         default:
-            puts( "Invalid choice.\n" );
-            instructions();
-            break;
       } // end switch
 
       printf( "%s", "? " );
