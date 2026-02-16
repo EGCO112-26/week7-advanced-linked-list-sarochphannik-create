@@ -168,11 +168,11 @@ void printListR( LLPtr currentPtr )
    } else {
       puts( "The list in reverse is:" );
       // go to end
-      while ( currentPtr->nextPtr != NULL ) {
+      while ( currentPtr->nextPtr !=NULL ) {
          currentPtr = currentPtr->nextPtr;
       }
       // now print backwards
-      while ( currentPtr != NULL ) {
+      while ( currentPtr !=NULL ) {
          printf( "%d %s --> ", currentPtr->id, currentPtr->name );
          currentPtr = currentPtr->pPtr;
       }
@@ -184,7 +184,7 @@ void printListR( LLPtr currentPtr )
 void freeList( LLPtr *sPtr )
 {
    LLPtr temp;
-   while (*sPtr != NULL) {
+   while (*sPtr !=NULL) {
       temp = *sPtr;
       *sPtr = (*sPtr)->nextPtr;
       free(temp);
