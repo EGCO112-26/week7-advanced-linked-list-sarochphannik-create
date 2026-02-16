@@ -16,7 +16,7 @@ int main(void) {
         switch (choice) {
             case 1: // Insert
                 printf("%s", "Enter id and name: ");
-                scanf("%d %s", &id, name); // Modified to scan both at once based on screenshot logic
+                scanf("%d %s", &id, name);
                 insert(&startPtr, id, name);
                 printList(startPtr);
                 printListR(startPtr);
@@ -24,7 +24,7 @@ int main(void) {
 
             case 2: // Delete
                 if (!isEmpty(startPtr)) {
-                    printf("%s", "Enter number to be deleted: "); // Text adjusted to match screenshot
+                    printf("%s", "Enter number to be deleted: ");
                     scanf("%d", &id);
 
                     if (deletes(&startPtr, id)) {
