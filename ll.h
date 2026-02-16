@@ -92,7 +92,7 @@ int deletes( LLPtr *sPtr, int id )
    if ( id == ( *sPtr )->id ) {
       tempPtr = *sPtr; // hold onto node being removed
       *sPtr = ( *sPtr )->nextPtr; // de-thread the node
-      if(*sPtr != NULL) (*sPtr)->pPtr = NULL;
+      if(*sPtr !=NULL) (*sPtr)->pPtr =NULL;
       free( tempPtr ); // free the de-threaded node
       return id;
    } // end if
@@ -101,16 +101,16 @@ int deletes( LLPtr *sPtr, int id )
       currentPtr = ( *sPtr )->nextPtr;
 
       // loop to find the correct location in the list
-      while ( currentPtr != NULL && currentPtr->id != id ) {
+      while ( currentPtr !=NULL && currentPtr->id != id ) {
          previousPtr = currentPtr; // walk to ...
          currentPtr = currentPtr->nextPtr; // ... next node
       } // end while
 
       // delete node at currentPtr
-      if ( currentPtr != NULL ) {
+      if ( currentPtr !=NULL ) {
          tempPtr = currentPtr;
          previousPtr->nextPtr = currentPtr->nextPtr;
-         if(currentPtr->nextPtr != NULL) currentPtr->nextPtr->pPtr = previousPtr;
+         if(currentPtr->nextPtr !=NULL) currentPtr->nextPtr->pPtr = previousPtr;
          free( tempPtr );
          return id;
       } // end if
@@ -122,7 +122,7 @@ int deletes( LLPtr *sPtr, int id )
 // return 1 if the list is empty, 0 otherwise
 int isEmpty( LLPtr sPtr )
 {
-   return sPtr == NULL;
+   return sPtr ==NULL;
 } // end function isEmpty
 
 // print the list
@@ -137,25 +137,25 @@ void printList( LLPtr currentPtr )
 
       // while not the end of the list
       LLPtr temp = currentPtr;
-      while ( temp != NULL ) {
-         printf( "%d %s --> ", temp->id, temp->name );
+      while ( temp !=NULL ) {
+         printf( "%d %s -->", temp->id, temp->name );
          temp = temp->nextPtr;
       } // end while
 
-      printf( "NULL\n" );
+      printf("NULL\n");
 
       puts( "The list in reverse is:" );
       // go to end
       temp = currentPtr;
-      while ( temp->nextPtr != NULL ) {
+      while ( temp->nextPtr !=NULL ) {
          temp = temp->nextPtr;
       }
       // now print backwards
-      while ( temp != NULL ) {
-         printf( "%d %s --> ", temp->id, temp->name );
+      while ( temp !=NULL ) {
+         printf( "%d %s -->", temp->id, temp->name );
          temp = temp->pPtr;
       }
-      printf( "NULL\n" );
+      printf("NULL\n");
        
    } // end else
 } // end function printList
@@ -173,10 +173,10 @@ void printListR( LLPtr currentPtr )
       }
       // now print backwards
       while ( currentPtr !=NULL ) {
-         printf( "%d %s --> ", currentPtr->id, currentPtr->name );
+         printf( "%d %s -->", currentPtr->id, currentPtr->name );
          currentPtr = currentPtr->pPtr;
       }
-      printf( "NULL\n" );
+      printf("NULL\n");
    }
 }
 
